@@ -1,0 +1,164 @@
+body {
+  background: #eee;
+  color: #111;
+  font-family: Ubuntu, Trebuchet MS, sans-serif;
+  text-shadow: 1px 1px 1px #ccc;
+}
+
+a {
+  text-decoration: none;
+  text-shadow: 0 0 0 #000;
+}
+
+div#products ul, div#cart ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+div#filters {
+  border: 3px solid #000;
+  float: left;
+  padding: 10px;
+  margin: 10px;
+  box-shadow: 3px 3px 2px #ccc;
+  -moz-box-shadow: 3px 3px 2px #ccc;
+  -webkit-box-shadow: 3px 3px 2px #ccc;
+}
+
+div#filters label {
+  display: block;
+  float: left;
+  width: 70px;
+  text-align: right;
+  padding: 2px 4px 0 0;
+}
+
+div#filters input[type="text"] {
+  width: 88px;
+}
+
+div#filters select {
+  width: 94px;
+}
+
+div#products {
+  border: 3px solid #000;
+  float: left;
+  padding: 10px;
+  margin: 10px;
+  width: 415px;
+  box-shadow: 3px 3px 2px #ccc;
+  -moz-box-shadow: 3px 3px 2px #ccc;
+  -webkit-box-shadow: 3px 3px 2px #ccc;
+}
+
+div#products ul li {
+  border: 1px solid #ccc;
+  float: left;
+  width: 95px;
+  height: 95px;
+  padding: 10px;
+  margin: 10px;
+  background: #fff;
+}
+
+div#products ul li:hover {
+  background: #f0f0f0;
+}
+
+div#products ul li.no {
+  border-color: #c00;
+}
+
+div#products ul li span.price {
+  display: block;
+  margin: 5px 0 0;
+}
+
+div#products ul li a.add {
+  display: block;
+  margin: 5px 0 0;
+  font-size: 0.9em;
+}
+
+div#products ul li a.add:after {
+  content: ' ';
+  display: block;
+  float: right;
+  margin: 4px 0 0 0;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-left: 10px solid #444;
+  border-bottom: 5px solid transparent; 
+}
+
+div#cart {
+  border: 3px solid #000;
+  float: left;
+  padding: 10px;
+  margin: 10px;
+  box-shadow: 3px 3px 2px #ccc;
+  -moz-box-shadow: 3px 3px 2px #ccc;
+  -webkit-box-shadow: 3px 3px 2px #ccc;
+}
+
+h2 {
+  margin: 0 0 10px;
+}
+
+div#cart ul {
+  margin: 10px 0;
+}
+
+div#cart ul li {
+  margin: 5px 0;
+}
+
+div#cart ul li em {
+  min-width: 160px;
+  display: block;
+  float: left;
+  font-style: normal;
+}
+
+div#cart ul li span.price {
+  min-width: 60px;
+  display: block;
+  float: left;
+  text-align: right;
+  margin-right: 3px;
+}
+
+div#cart span#total {
+  margin-left: 120px;
+}
+
+
+div#cart ul li a.increase, div#cart ul li a.decrease {
+  border: 1px solid #ccc;
+  padding: 0 3px;
+}
+
+div#cart ul li a.increase:hover, div#cart ul li a.decrease:hover {
+  border-color: #000;
+  background: #fff;
+}
+
+div#cart a#empty_cart {
+  display: block;
+  margin: 10px 0 0;
+}
+
+div#ajax {
+  display: none;
+  background: #b91d4c url('/bundles/garakdemo/images/loading.gif') center center no-repeat;
+  position: fixed;
+  top: 0;
+  left: 100px;
+  z-index: 100;
+  width: 60px;
+  height: 50px;
+  display: none;
+}

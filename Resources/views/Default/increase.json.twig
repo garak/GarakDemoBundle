@@ -1,0 +1,2 @@
+{% set data = {'total': '€ ' ~ total|number_format(2)} %}
+{{ data|json_encode|raw }}

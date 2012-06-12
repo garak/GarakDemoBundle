@@ -1,0 +1,23 @@
+{#
+{% set data = {} %}
+{% for product in products %}
+    {% set i = loop.index %}
+    {% set data.i = {
+        'name'    : product.name,
+        'category': product.category.name,
+        'price'   : '€ ' ~ product.price|number_format(2),
+        'url'     : '<a href="' ~ path('add', {'slug': product.slug}) ~ '" class="add">add to cart</a>',
+    } %}
+{% endfor %}
+{{ data|json_encode|raw }}
+#}
+[
+{% for product in products %}
+    {{ {
+        'name'    : product.name,
+        'category': product.category.name,
+        'price'   : '€ ' ~ product.price|number_format(2),
+        'url'     : '<a href="' ~ path('add', {'slug': product.slug}) ~ '" class="add">add to cart</a>',
+    }|json_encode|raw }}{% if not loop.last %},{% endif %}
+{% endfor %}
+]

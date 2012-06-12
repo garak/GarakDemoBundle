@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>{% block title %}Symfony2 jQuery eCommerce{% endblock %}</title>
+        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
+        {% stylesheets
+            '@GarakDemoBundle/Resources/public/css/sfjqec.css'
+        %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
+        {% block stylesheets %}
+        {% endblock %}
+    </head>
+    <body>
+        {% block content %}
+        {% endblock %}
+        <div id="ajax"></div>
+        {% javascripts
+            '@GarakDemoBundle/Resources/public/js/jquery.js'
+            '@GarakDemoBundle/Resources/public/js/sfjqec.js'
+        %}
+        <script type="text/javascript" src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

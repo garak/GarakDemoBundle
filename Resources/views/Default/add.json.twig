@@ -1,0 +1,13 @@
+{%
+    set data = {
+        'name'      : product.name,
+        'price'     : '€ ' ~ product.price|number_format(2),
+        'quantity'  : 1,
+        'total'     : '€ ' ~ total|number_format(2),
+        'a_remove'  : '<a href="' ~ path('remove', {'slug': product.slug}) ~ '" class="remove">X</a>',
+        'a_increase': '<a href="' ~ path('increase', {'slug': product.slug}) ~ '" class="increase">+</a>',
+        'a_decrease': '<a href="' ~ path('decrease', {'slug': product.slug}) ~ '" class="decrease">-</a>',
+        'a_empty'   : '<a href="' ~ path('empty') ~ '" id="empty_cart">empty cart</a>',
+    }
+%}
+{{ data|json_encode|raw }}

@@ -1,0 +1,30 @@
+{% extends 'GarakDemoBundle::layout.html.twig' %}
+
+{% block content %}
+    <div id="filters">
+        <h2>Filters</h2>
+        <form method="get" action="{{ path('filter') }}">
+            {{ form_widget(form) }}
+            <input type="submit" value="filter" />
+        </form>
+    </div>
+    
+    <div id="products">
+        <h2>Products</h2>
+        <ul>
+            {% for product in products %}
+                <li>
+                    {{ product.name }}
+                    <span class="cat">{{ product.category }}</span>
+                    <span class="price">€ {{ product.price|number_format(2) }}</span>
+                    <a href="{{ path('add', {'slug': product.slug}) }}" class="add">add to cart</a>
+                </li>
+            {% else %}
+                <li class="no">No results</li>
+            {% endfor %}
+        </ul>
+    </div>
+    
+    {% render 'GarakDemoBundle:Default:cart' %}
+    
+{% endblock %}

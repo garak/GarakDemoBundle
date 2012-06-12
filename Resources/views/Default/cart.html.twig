@@ -1,0 +1,28 @@
+<div id="cart">
+    <h2>Cart</h2>
+    {% if cart|length > 0 %}
+        <ul>
+            {% for id,q in cart %}
+                <li id="item_{{ id }}">
+                    <em>{{ products[id].name }}</em>
+                    <span class="price">
+                        € {{ products[id].price|number_format(2) }}
+                    </span>
+                    <a href="{{ path('remove', {'slug': products[id].slug}) }}" class="remove">X</a>
+                    <a href="{{ path('decrease', {'slug': products[id].slug}) }}" class="decrease">-</a>                
+                    <span class="quantity">
+                        {{ q }}
+                    </span>
+                    <a href="{{ path('increase', {'slug': products[id].slug}) }}" class="increase">+</a>
+                </li>
+            {% endfor %}
+        </ul>
+        <strong>Total</strong>
+        <span id="total">
+            € {{ total|number_format(2) }}
+        </span>
+        <a id="empty_cart" href="{{ path('empty') }}">empty cart</a>
+    {% else %}
+        no products yet
+    {% endif %}
+</div>
