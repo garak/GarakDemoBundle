@@ -46,37 +46,16 @@ sott'occhio il codice di questo progetto, in particolare il controller e il file
 installazione
 -------------
 
-Aggiungere le seguenti righe al proprio file `deps`:
+Aggiungere le seguenti righe al proprio file `composer.json`:
 
-``` ini  
-[GarakDemoBundle]
-    git=git://github.com/garak/GarakDemoBundle.git
-    target=bundles/Garak/DemoBundle
-```
-
-Nel caso non compaiano già, aggiungere anche le seguenti dipendenze:
-
-``` ini
-[gedmo-doctrine-extensions]
-    git=http://github.com/l3pp4rd/DoctrineExtensions.git
-
-[StofDoctrineExtensionsBundle]
-   git=https://github.com/stof/StofDoctrineExtensionsBundle.git
-   target=/bundles/Stof/DoctrineExtensionsBundle
-```
-
-Aggiungere gli spazi dei nomi al proprio autoloader:
-
-``` php
-<?php
-// app/autoload.php
-
-$loader->registerNamespaces(array(
-    // ...
-    'Stof'   => __DIR__.'/../vendor/bundles',
-    'Garak'  => __DIR__.'/../vendor/bundles',
-    'Gedmo'  => __DIR__.'/../vendor/gedmo-doctrine-extensions/lib',
-));
+``` json  
+    "require": {
+        "garak/demo-bundle": "dev-master"
+    },
+    "repositories": [{
+        "type": "vcs",
+        "url": "http://github.com/garak/GarakDemoBundle"
+    }],
 ```
 
 Abilitare il bundle nel kernel:
@@ -108,7 +87,7 @@ GarakDemoBundle:
 Infine, eseguire da terminale lo script di aggiornamento:
 
 ``` bash
-$ php bin/vendors install
+$ composer install
 ```
 
 
@@ -156,36 +135,16 @@ and the js file.
 installation
 ------------
 
-Add the following lines in your `deps` file:
+Add the following lines in your `composer.json` file:
 
-``` ini
-[GarakDemoBundle]
-    git=git://github.com/garak/GarakDemoBundle.git
-    target=bundles/Garak/DemoBundle
-```
-
-Unless already installed, add also these dependencies:
-
-``` ini
-[gedmo-doctrine-extensions]
-    git=http://github.com/l3pp4rd/DoctrineExtensions.git
-
-[StofDoctrineExtensionsBundle]
-   git=https://github.com/stof/StofDoctrineExtensionsBundle.git
-   target=/bundles/Stof/DoctrineExtensionsBundle
-
-Add the namespaces to your autoloader:
-
-``` php
-<?php
-// app/autoload.php
-
-$loader->registerNamespaces(array(
-    // ...
-    'Stof'   => __DIR__.'/../vendor/bundles',
-    'Garak'  => __DIR__.'/../vendor/bundles',
-    'Gedmo'  => __DIR__.'/../vendor/gedmo-doctrine-extensions/lib',
-));
+``` json  
+    "require": {
+        "garak/demo-bundle": "dev-master"
+    },
+    "repositories": [{
+        "type": "vcs",
+        "url": "http://github.com/garak/GarakDemoBundle"
+    }],
 ```
 
 Enable the bundle in the kernel:
@@ -217,5 +176,5 @@ GarakDemoBundle:
 Last, update vendors from a terminal:
 
 ``` bash
-$ php bin/vendors install
+$ composer install
 ```
