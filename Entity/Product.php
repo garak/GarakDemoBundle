@@ -26,7 +26,6 @@ class Product
      * @var string $name
      *
      * @ORM\Column
-     * @Gedmo:Sluggable
      */
     private $name;
 
@@ -63,14 +62,14 @@ class Product
      * @var string $name
      *
      * @ORM\Column(length=255, unique=true)
-     * @Gedmo:Slug
+     * @Gedmo\Slug(fields={"name"})
      */
     private $slug;
-    
+
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -90,7 +89,7 @@ class Product
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -110,7 +109,7 @@ class Product
     /**
      * Get price
      *
-     * @return float 
+     * @return float
      */
     public function getPrice()
     {
@@ -130,7 +129,7 @@ class Product
     /**
      * Get category
      *
-     * @return Category 
+     * @return Category
      */
     public function getCategory()
     {
@@ -150,7 +149,7 @@ class Product
     /**
      * Get created
      *
-     * @return DateTime 
+     * @return DateTime
      */
     public function getCreated()
     {
@@ -170,7 +169,7 @@ class Product
     /**
      * Get updated
      *
-     * @return DateTime 
+     * @return DateTime
      */
     public function getUpdated()
     {
@@ -190,7 +189,7 @@ class Product
     /**
      * Get slug
      *
-     * @return string 
+     * @return string
      */
     public function getSlug()
     {

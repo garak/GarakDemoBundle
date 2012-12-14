@@ -5,22 +5,22 @@ namespace Garak\DemoBundle\Util;
 use Doctrine\ORM\EntityManager;
 use Garak\DemoBundle\Entity\Category;
 use Garak\DemoBundle\Entity\Product;
-use Symfony\Component\HttpFoundation\Session;
+use Symfony\Component\HttpFoundation\Session\Session;
 
 class SessionCart
 {
     protected $session;
-    
+
     /**
      * Constructor
      *
      * @param Session $session
      */
     public function __construct(Session $session)
-    {        
+    {
         $this->session = $session;
     }
-    
+
     /**
      * @param array $filters
      */
@@ -33,7 +33,7 @@ class SessionCart
             );
             $filters['category'] = $category;
         }
-        
+
         $this->session->set('filters', $filters);
     }
 
@@ -49,7 +49,7 @@ class SessionCart
                 $filters['category'] = $em->find($category['class'], $category['id']);
             }
         }
-        
+
         return $filters;
     }
 
@@ -132,11 +132,8 @@ class SessionCart
     {
         $this->session->set('cart', array());
     }
-    
+
     private function fix(Category $category, $em)
     {
-#var_dump($category);die;        
-        
-
     }
 }

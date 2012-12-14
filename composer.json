@@ -1,0 +1,26 @@
+{
+    "name": "garak/demo-bundle",
+    "type": "symfony-bundle",
+    "description": "A demo for implementing ajax in Symfony2",
+    "keywords": ["symfony2"],
+    "license": "LGPL-3.0+",
+    "authors": [
+        {
+            "name": "Massimiliano Arione",
+            "email": "garakkio@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "doctrine/orm": ">=2.2,<2.4-dev",
+        "sensio/framework-extra-bundle": "2.1.*",
+        "stof/doctrine-extensions-bundle": "1.1.*",
+        "symfony/framework-bundle": "2.1.*",
+        "symfony/form": "2.1.*",
+        "symfony/validator": "2.1.*"
+    },
+    "autoload": {
+        "psr-0": { "Garak\\DemoBundle": "" }
+    },
+    "target-dir": "Garak/DemoBundle"
+}

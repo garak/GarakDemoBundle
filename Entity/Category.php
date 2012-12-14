@@ -27,7 +27,6 @@ class Category
      * @var string $name
      *
      * @ORM\Column
-     * @Gedmo:Sluggable
      */
     private $name;
 
@@ -55,7 +54,7 @@ class Category
     /**
      * @var string $name
      *
-     * @Gedmo:Slug
+     * @Gedmo\Slug(fields={"name"})
      * @ORM\Column(length=255, unique=true)
      */
     private $slug;
@@ -69,11 +68,11 @@ class Category
     {
         return $this->name;
     }
-    
+
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -93,13 +92,13 @@ class Category
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
         return $this->name;
     }
-    
+
     /**
      * Constructor
      */
@@ -121,7 +120,7 @@ class Category
     /**
      * Get products
      *
-     * @return Doctrine\Common\Collections\Collection 
+     * @return Doctrine\Common\Collections\Collection
      */
     public function getProducts()
     {
@@ -141,7 +140,7 @@ class Category
     /**
      * Get created
      *
-     * @return DateTime 
+     * @return DateTime
      */
     public function getCreated()
     {
@@ -161,7 +160,7 @@ class Category
     /**
      * Get updated
      *
-     * @return DateTime 
+     * @return DateTime
      */
     public function getUpdated()
     {
@@ -181,7 +180,7 @@ class Category
     /**
      * Get slug
      *
-     * @return string 
+     * @return string
      */
     public function getSlug()
     {
